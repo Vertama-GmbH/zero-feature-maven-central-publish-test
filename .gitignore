@@ -3,3 +3,7 @@
 
 # Ignore Gradle build output directory
 build
+
+# project specific ignores
+.env
+openapitools.json

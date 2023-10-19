@@ -64,7 +64,7 @@ tasks.named<Test>("test") {
 
 tasks.javadoc {
     if (JavaVersion.current().isJava9Compatible) {
-        (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
+        //(options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
     }
 }
 
@@ -144,7 +144,8 @@ signing {
 
 nexusPublishing {
     repositories {
-        create("myNexus") {
+        //create("myNexus") {
+        sonatype {
             nexusUrl.set(uri(Meta.release))
             snapshotRepositoryUrl.set(uri(Meta.snapshot))
             val ossrhUsername = providers.environmentVariable("OSSRH_USERNAME")
